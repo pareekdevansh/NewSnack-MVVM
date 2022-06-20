@@ -1,4 +1,6 @@
-package com.pareekdevansh.newsnack.ui
+package com.pareekdevansh.newsnack
+
+import com.pareekdevansh.newsnack.Article
 
 data class NewsResponse(
     val articles: List<Article>,

@@ -1,4 +1,4 @@
-package com.pareekdevansh.newsnack.ui
+package com.pareekdevansh.newsnack
 
 data class Source(
     val id: Any,
