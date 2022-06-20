@@ -1,6 +1,6 @@
-package com.pareekdevansh.newsnack
+package com.pareekdevansh.newsnack.models
 
-import com.pareekdevansh.newsnack.Article
+import com.pareekdevansh.newsnack.models.Article
 
 data class NewsResponse(
     val articles: List<Article>,

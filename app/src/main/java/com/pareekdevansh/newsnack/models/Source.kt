@@ -1,4 +1,4 @@
-package com.pareekdevansh.newsnack
+package com.pareekdevansh.newsnack.models
 
 data class Source(
     val id: Any,

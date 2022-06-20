@@ -1,6 +1,6 @@
 package com.pareekdevansh.newsnack.api
 
-import com.pareekdevansh.newsnack.NewsResponse
+import com.pareekdevansh.newsnack.models.NewsResponse
 import com.pareekdevansh.newsnack.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
