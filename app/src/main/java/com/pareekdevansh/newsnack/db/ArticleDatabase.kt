@@ -1,10 +1,7 @@
 package com.pareekdevansh.newsnack.db
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
+import androidx.room.*
 import com.pareekdevansh.newsnack.models.Article
 import kotlinx.coroutines.internal.synchronized
 
@@ -23,11 +20,8 @@ abstract class ArticleDatabase : RoomDatabase() {
         private var instance : ArticleDatabase? = null
         private val LOCK = Any()
 
-        operator fun invoke(context: Context) = instance?: synchronized(LOCK){
-            instance?: createDatabase(context)
-                .also {
-                    instance = it
-                }
+        operator fun invoke(context: Context) = instance?: kotlin.synchronized(LOCK){
+            instance ?: createDatabase(context).also { instance = it}
         }
         private fun createDatabase(context: Context) =
             Room.databaseBuilder(
