@@ -42,16 +42,6 @@ class BreakingNewsFragment:Fragment(R.layout.fragment_breaking_news) {
         setupRecyclerView()
 
 
-        newsAdapter.setOnItemClickListener { article ->
-            val bundle = Bundle().apply {
-                putSerializable("article" , article)
-            }
-            findNavController().navigate(
-                R.id.action_breakingNewsFragment_to_articleFragment,
-                bundle
-            )
-        }
-
         viewModel.breakingNews.observe(viewLifecycleOwner , Observer{ response ->
             when(response){
                 is Resource.Success -> {
@@ -71,6 +61,17 @@ class BreakingNewsFragment:Fragment(R.layout.fragment_breaking_news) {
                 }
             }
         })
+
+        newsAdapter.setOnItemClickListener { article ->
+            val bundle = Bundle().apply {
+                putSerializable("article" , article)
+            }
+            findNavController().navigate(
+                R.id.action_breakingNewsFragment_to_articleFragment,
+                bundle
+            )
+        }
+
     }
 
     private fun hideProgressBar() {

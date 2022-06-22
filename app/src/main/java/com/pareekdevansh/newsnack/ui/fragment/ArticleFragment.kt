@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -20,7 +21,6 @@ class ArticleFragment:Fragment(R.layout.fragment_article) {
     private val args: ArticleFragmentArgs by navArgs()
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding!!
-    lateinit var article: Article
 
 
     override fun onCreateView(
@@ -40,11 +40,7 @@ class ArticleFragment:Fragment(R.layout.fragment_article) {
 
         val article = args.article
         binding.articleWebView.apply {
-            hideProgressBar()
-            visibility = View.VISIBLE
             webViewClient = WebViewClient()
-            settings.javaScriptEnabled = true
-            settings.setSupportZoom(true)
             loadUrl(article.url)
         }
 
@@ -54,9 +50,6 @@ class ArticleFragment:Fragment(R.layout.fragment_article) {
         }
 
 
-    }
-    private fun hideProgressBar() {
-        binding.progressBar.visibility = View.INVISIBLE
     }
 
     override fun onDestroyView() {

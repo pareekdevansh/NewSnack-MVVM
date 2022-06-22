@@ -46,17 +46,8 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         super.onViewCreated(view, savedInstanceState)
 
         val viewModel: NewsViewModel by activityViewModels()
-        setupRecyclerView()
 
-        newsAdapter.setOnItemClickListener { article ->
-            val bundle = Bundle().apply {
-                putSerializable("article" , article)
-            }
-            findNavController().navigate(
-                R.id.action_searchFragment_to_articleFragment,
-                bundle
-            )
-        }
+        setupRecyclerView()
 
         var job: Job? = null
         binding.searchView.addTextChangedListener { editable ->
@@ -95,6 +86,17 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                 }
             }
         })
+
+
+        newsAdapter.setOnItemClickListener { article ->
+            val bundle = Bundle().apply {
+                putSerializable("article" , article)
+            }
+            findNavController().navigate(
+                R.id.action_searchFragment_to_articleFragment,
+                bundle
+            )
+        }
     }
 
     private fun hideProgressBar() {
