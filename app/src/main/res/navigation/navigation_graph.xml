@@ -2,12 +2,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/articleFragment">
+    app:startDestination="@id/breakingNewsFragment">
 
     <fragment
         android:id="@+id/articleFragment"
         android:name="com.pareekdevansh.newsnack.ui.fragment.ArticleFragment"
-        android:label="ArticleFragment" />
+        android:label="ArticleFragment" >
+        <argument
+            android:name="article"
+            app:argType="com.pareekdevansh.newsnack.models.Article" />
+    </fragment>
 
     <fragment
         android:id="@+id/breakingNewsFragment"

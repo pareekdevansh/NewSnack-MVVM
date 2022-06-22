@@ -1,26 +1,21 @@
 package com.pareekdevansh.newsnack.ui.fragment
 
-import android.os.Binder
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pareekdevansh.newsnack.R
 import com.pareekdevansh.newsnack.adapters.NewsAdapter
 import com.pareekdevansh.newsnack.databinding.FragmentBreakingNewsBinding
-import com.pareekdevansh.newsnack.db.ArticleDatabase
-import com.pareekdevansh.newsnack.repository.NewsRepository
-import com.pareekdevansh.newsnack.ui.NewsActivity
 import com.pareekdevansh.newsnack.ui.NewsViewModel
 import com.pareekdevansh.newsnack.util.Resource
-import retrofit2.Response
 
 
 class BreakingNewsFragment:Fragment(R.layout.fragment_breaking_news) {
@@ -45,6 +40,17 @@ class BreakingNewsFragment:Fragment(R.layout.fragment_breaking_news) {
         val viewModel: NewsViewModel by activityViewModels()
 
         setupRecyclerView()
+
+
+        newsAdapter.setOnItemClickListener { article ->
+            val bundle = Bundle().apply {
+                putSerializable("article" , article)
+            }
+            findNavController().navigate(
+                R.id.action_breakingNewsFragment_to_articleFragment,
+                bundle
+            )
+        }
 
         viewModel.breakingNews.observe(viewLifecycleOwner , Observer{ response ->
             when(response){
