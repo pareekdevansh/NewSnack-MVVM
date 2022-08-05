@@ -11,34 +11,21 @@ A native android app to keep you upto date with everything going on in the world
 
 
 
-<p align="center">
-    Breaking News Page
-</p>
+### Breaking News Page
 <p align = "center"  float="left">
-<img src="https://user-images.githubusercontent.com/93207824/183012238-b87aa902-3fcd-4c14-914f-2d01e738478e.png" alt="drawing" width="300"/>
-<img src="https://user-images.githubusercontent.com/93207824/183012504-2d36079b-6e7b-49d1-9162-be6b0c8174e7.png" alt="drawing" width="300"/>
+<img src="https://user-images.githubusercontent.com/93207824/183012238-b87aa902-3fcd-4c14-914f-2d01e738478e.png" alt="drawing" width="300 hspace ="40px"/>
+<img src="https://user-images.githubusercontent.com/93207824/183012504-2d36079b-6e7b-49d1-9162-be6b0c8174e7.png" alt="drawing" width="300" hspace ="40px"/>
 
 </p>
 
 
-
-<p align="center">
-    Saved News Page
-</p>
-
+### Saved News Page
 <p align = "center"  float="left">
-<img src="https://user-images.githubusercontent.com/93207824/183012354-609539e0-8cdb-4e78-8401-37918c0a8149.png" alt="drawing" width="300" hspace="20"/>
+<img src="https://user-images.githubusercontent.com/93207824/183012354-609539e0-8cdb-4e78-8401-37918c0a8149.png" alt="drawing" width="300" hspace="40px"/>
 </p>
 
 
-<p align="center">
-    Search News
-</p>
+### Search News
 <p align = "center" float="left">
-  <img src="https://user-images.githubusercontent.com/93207824/183012467-ffa6b11a-b122-4cfe-bcb9-945eceb01173.png" alt="drawing" width="300" hspace="20"/>
+  <img src="https://user-images.githubusercontent.com/93207824/183012467-ffa6b11a-b122-4cfe-bcb9-945eceb01173.png" alt="drawing" width="300" hspace="40px"/>
 </p>
-
-
-
-
-
